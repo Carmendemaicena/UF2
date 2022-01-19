@@ -1,16 +1,13 @@
 /*
  * main.c
  *
- *  Created on: Jan 14, 2022
- *      Author: usuari
+ *  Created on: Jan 19, 2022
+ *      Author: admin-pg
  */
 #include <stdio.h>
-#include <stdlib.h>
-
-void main()
-{
-   int num1,num2;
-   num1=validate();
-   num2=calculate();
-   imprimir();
+void main(){
+	int num1;
+	num1=validate();
+	calculate();
 }
+
