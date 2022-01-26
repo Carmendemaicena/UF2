@@ -11,7 +11,7 @@ int llegirnum(char *msg){
     return num;
 }
 
-void canviar(int num,int num2){
+void canviar(int *num,int *num2){
 	int aux;
 	aux=num;
 	num=num2;
