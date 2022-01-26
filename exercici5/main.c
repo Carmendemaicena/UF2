@@ -12,5 +12,5 @@ void main(){
 	int num, num2;
 	num = llegirnum("Coloca el primer valor:\n");
 	num2 = llegirnum("Coloca el segundo valor:\n");
-	canviar(num,num2);
+	canviar(&num,&num2);
 }
