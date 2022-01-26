@@ -13,8 +13,8 @@ int llegirnum(char *msg){
 void calculate(int num){
 	int i=0,res=0,aux;
 	while (res<=num){
-		res+=i;
 		i++;
+		res+=i;
 		if(res>num){
 			aux=res-i;
 			i--;
