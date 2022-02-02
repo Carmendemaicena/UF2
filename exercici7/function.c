@@ -4,6 +4,7 @@
  *  Created on: 24 ene 2022
  *      Author: nil
  */
+#include "function.h"
 int llegirnum(char *msg){//función de entrada de datos
     int num;
     do{//validación de datos
@@ -39,4 +40,25 @@ void calculate(int *vector,int num){//función que calcula
 	printf("El valor màxim de l'array és: %d\n",max);
 	printf("El valor mínim de l'array és: %d\n",min);
 }
-
+void ordenar(int *vector, int num){
+	int aux,i,j;
+	for(i=0;i<num-1;i++){
+		for(j=i+1;j<num;j++){
+			if(vector[i]>vector[j]){
+				aux=vector[i];
+				vector[i]=vector[j];
+				vector[j]=aux;
+			}
+		}
+	}
+	printf("L'array ordenat és així:[");
+	for(i=0;i<num;i++){
+		if(i<num-1){
+			printf("%d,",vector[i]);
+		}
+		else{
+			printf("%d",vector[i]);
+		}
+	}
+	printf("]");
+}
