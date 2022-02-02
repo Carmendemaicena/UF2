@@ -15,4 +15,5 @@ void main(){
 	int vector[num];
 	getvalues(vector,num);
 	calculate(vector,num);
+	ordenar(vector,num);
 }
