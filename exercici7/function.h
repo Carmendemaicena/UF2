@@ -14,4 +14,5 @@
 int llegirnum(char *);
 int getcalues(int *,int);
 void calculate(int *,int);
+void ordenar(int *,int);
 
