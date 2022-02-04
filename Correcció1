@@ -1,0 +1,47 @@
+/*El código del César es el siguiente:*/
+#include <stdio.h>
+#include "function.h"
+
+void main(){
+   int i=1, cont=0;
+   int arrai[100];
+   do{
+       if(i%2==0){
+            arrai[cont]=i;
+            cont=cont+1;
+            i=i+1;
+       }
+       else{
+            i=i+1;
+       }
+   }while(cont<100);
+
+   i=0;
+    do{
+       printf(" %d, ", arrai[i]);
+       i=i+1;
+   }while(i<100);
+}
+/*Está todo dentro del main.c y no se aplica el diseño modular, a continuación enseñaré mi respuesta:
+El function.c:*/
+#include "function.h"
+#define SIZE 100
+void trobar(int *vector){
+	printf("[");
+	for(int i=1;i<SIZE;i++){
+		if(i%2==0 && i!=SIZE-2){
+			printf("%d,",i);
+		}
+		else if(i%2==0 && i==SIZE-2){
+			printf("%d]",i);
+		}
+	}
+}
+/*El main.c:*/
+#include <stdio.h>
+#include "function.h"
+#define SIZE 100
+void main(){
+	int vector[SIZE];
+	trobar(vector);
+}
