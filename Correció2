@@ -1,0 +1,91 @@
+/*El código de Oriol es el siguiente:*/
+#include <stdio.h>
+#include "function.h"
+
+int validate(){
+    int num;
+    do{
+   	 printf("Quants llibres vols registrar?\n");
+   	 scanf("%d", &num);
+    }while(num<1);
+    return num;
+}
+
+void registrobib(struct biblioteca *b,int size){ //punter a office
+    for(int i=0; i<size;i++){
+   	 printf("Introduce titulo del libro: \n");
+   	 scanf("%s",b[i].titulo);
+   	 printf("Introduce nombre del autor: \n");
+   	 scanf("%s",b[i].autor);
+   	 printf("Introduce nombre de la editorial: \n");
+   	 scanf("%s",b[i].editorial);
+   	 printf("Introduce el año de poblicación: \n");
+   	 scanf("%d",&b[i].fecha.year);
+   	 printf("Introduce el mes de poblicación: \n");
+   	 scanf("%d",&b[i].fecha.mes);
+   	 printf("Introduce el dia de poblicación: \n");
+   	 scanf("%d",&b[i].fecha.dia);
+   	 printf("Introduce unidades disponibles: \n");
+   	 scanf("%d",&b[i].unidades);
+   	 printf("Introduce nombre de usuario: \n");
+   	 scanf("%s",b[i].usuario);
+   	 printf("Introduce cantidad de dias de prestamo: \n");
+   	 scanf("%d",&b[i].dias_prestamo);
+
+    }
+}
+
+void printabla(struct biblioteca *b, int size){
+    printf("------------------------------------------------\n");
+    printf("Estos son los registros:\n");
+    printf("Libro\t Autor\t Editorial\t Fecha\t\t Unidades\t Usuario\t Dias prestados\n");
+    for(int i=0; i<size; i++){
+    	printf("%s\t %s\t %s\t\t %d/%d/%d\t %d\t %s\t %d\t\n", b[i].titulo, b[i].autor, b[i].editorial, b[i].fecha.year, b[i].fecha.mes, b[i].fecha.dia, b[i].unidades, b[i].usuario, b[i].dias_prestamo );
+
+    }
+}
+/*Todo está correcto, simplemente se puede optimizar añadiendo literales en el funcion.h, y pasándolos al function.c, así podríamos reutilizarlo si decidiéramos seguir el programa*/
+/*Quedaria tal que así:(este es mi código)*/
+#include "function.h"
+#include <stdio.h>
+int llegirnum(char *msg){//función de entrada de datos
+    int num;
+    do{//validación de datos
+    	printf("%s", msg);
+    	scanf("%d", &num);
+    }while(num<1 || num>50);
+    return num;
+}
+void modifydata(struct biblio *b,int num){
+	for(int i=0;i<num;i++){
+	printf("%s",TEXT1);
+	scanf("%s",b[i].title);
+	printf("%s",TEXT2);
+	scanf("%s",b[i].autor);
+	printf("%s",TEXT3);
+	scanf("%s",b[i].editorial);
+	printf("%s",TEXT4);
+	scanf("%d",&b[i].time.dia);
+	printf("%s",TEXT5);
+	scanf("%d",&b[i].time.mes);
+	printf("%s",TEXT6);
+	scanf("%d",&b[i].time.year);
+	printf("%s",TEXT7);
+	scanf("%d",&b[i].units);
+	printf("%s",TEXT8);
+	scanf("%s",b[i].usuari);
+	printf("%s",TEXT9);
+	scanf("%d",&b[i].prestec);
+	}
+}
+void printdata(struct biblio *b, int num){
+	for(int i=0;i<num;i++){
+		printf("\n*************Libro %d******************\n", i+1);
+		printf("Título del libro: %s\n", b[i].title);
+		printf("Autor del libro: %s\n", b[i].autor);
+		printf("Editorial del libro: %s\n", b[i].editorial);
+		printf("Fecha de publicación: %d-%d-%d\n", b[i].time.dia, b[i].time.mes, b[i].time.year);
+		printf("Unidades disponibles: %d\n", b[i].units);
+		printf("Usuario del préstamo: %s\n", b[i].usuari);
+		printf("Día(s) de préstamo: %d\n", b[i].prestec);
+	
