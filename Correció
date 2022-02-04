@@ -1,0 +1,37 @@
+/*El código de la Zaida en el function.c es este:*/
+#include <stdio.h>
+#include "functions.h"
+
+void parells(){
+	int Parells[SIZE], j=2;
+
+	for (int i=0; i<SIZE;i++){
+		Parells[i] = j;
+		j = j+2;
+	}
+	mostrar(Parells);
+}
+
+void mostrar(int *llista){
+	for (int i = 0; i<SIZE; i++){
+		printf("%d / ", llista[i]);
+	}
+}
+/*No podemos llamar a una función dentro de otra si esta no ha sido declarada antes, es decir, tendrían que estar en este orden*/
+#include <stdio.h>
+#include "functions.h"
+
+void mostrar(int *llista){
+	for (int i = 0; i<SIZE; i++){
+		printf("%d / ", llista[i]);
+	}
+void parells(){
+	int Parells[SIZE], j=2;
+	for (int i=0; i<SIZE;i++){
+		Parells[i] = j;
+		j = j+2;
+	}
+	mostrar(Parells);
+}
+}
+/*De esta manera el programa se ejecutará y reconocerá la función mostrar()*/
